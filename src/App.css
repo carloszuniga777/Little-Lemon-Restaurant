@@ -1,7 +1,10 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+.container{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    justify-content: stretch;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 

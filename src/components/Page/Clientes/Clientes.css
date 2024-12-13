@@ -1,0 +1,26 @@
+.clientes{
+    background-color: #f4cf1463;
+}
+
+.contenedor-testimonios-titulo{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 3rem;
+    max-width: 120rem;
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.contenedor-testimonios-titulo h2{
+    color: #495e57;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.contenedor-testimonios{
+    display: flex;    
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: center;
+}

@@ -1,0 +1,136 @@
+.presentacion{  
+    background-color: #495e57;
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 84% 87%, 67% 100%, 54% 86%, 38% 100%, 20% 88%, 0 100%, 0 0);
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 84% 87%, 67% 100%, 54% 86%, 38% 100%, 20% 88%, 0 100%, 0 0);
+}
+
+.contenedor-presentacion{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    height: 60dvh;
+    max-height: 37.5rem;
+    max-width: 120rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+
+.contenedor-descripcion-button{
+    width: 60%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.titulo{
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    color: #F4CE14;
+    text-transform: uppercase;
+}
+
+.subtitulo-1{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    text-align: center;
+    color: white;
+    line-height: 1.7;
+}
+
+.subtitulo-2{
+    margin-top: 0;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+
+.contenedor-imagen{
+    position: relative;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-reservar-mesa{
+    width: 10rem;
+    background-color: #F4CE14;
+}
+
+.imagen-mesero{
+    border-radius: 3rem;
+
+    width: 14rem;
+    height: 15rem;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}
+
+
+
+@media screen and (max-width: 640px){
+
+ 
+    .presentacion{
+        clip-path:  polygon(100% 0, 100% 100%, 87% 94%, 71% 100%, 53% 94%, 36% 100%, 20% 94%, 0 100%, 0% 31%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 100%, 87% 94%, 71% 100%, 53% 94%, 36% 100%, 20% 94%, 0 100%, 0% 31%, 0 0);
+    }
+    .contenedor-presentacion{
+        flex-flow: column nowrap;
+        place-items: center;
+        place-content: center;
+        height: 85dvh;
+        gap: 2rem;
+    }
+
+    .contenedor-descripcion{
+        padding-top: 1rem;
+     }
+
+    .contenedor-descripcion-button {
+        width: 100%;
+    }   
+
+    .contenedor-imagen {
+        width: 100%;
+    }
+
+        
+    .boton-reservar-mesa{
+        width: 7rem;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.1rem;
+    }
+
+}
+
+@media screen and (max-width:640px) {
+    
+    .imagen-mesero{
+        width: 9rem;
+        height: 10rem;
+    }
+}
+
+
+@media screen and (min-width: 1280px){
+    .imagen-mesero{
+         width: 18rem;
+        height: 20rem; 
+    }
+}

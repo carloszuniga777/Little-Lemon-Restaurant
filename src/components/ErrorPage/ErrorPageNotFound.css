@@ -1,0 +1,21 @@
+
+  
+
+.contenedor-error-page-not-found{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    gap: 2rem;
+}
+
+.boton-error-inicio{
+    background-color: #495e57;
+    color: white;
+}
+
+.icon-sad{
+    color: rgb(242, 202, 0);
+    font-size: 15rem;
+}
