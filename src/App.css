@@ -6,5 +6,12 @@
     justify-content: stretch;
     padding-left: 2rem;
     padding-right: 2rem;
+    max-width: 120rem;
 }
 
+@media screen and (max-width: 640px){
+    .container{
+        padding-left: 0rem;
+        padding-right: 0rem;
+    } 
+}

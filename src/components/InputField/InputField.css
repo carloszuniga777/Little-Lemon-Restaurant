@@ -1,0 +1,60 @@
+
+  /* Estilos para los campos del InputField */
+  .InputField-campo {
+    margin-bottom: 0.938rem;
+  }
+  
+  .InputField-label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.313rem;
+    color: #333;
+  }
+  
+  .InputField-span {
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  
+  /* Estilo para el contenedor de los inputs y el símbolo de requerido */
+  .InputField-input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .InputField-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    margin-top: 0.313rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -o-border-radius: 0.25rem;
+}
+  
+  /* Estilo para los inputs enfocados (Brillo Celeste) */
+  .InputField-input:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Brillo celeste */
+  }
+  
+  /* Estilo para el símbolo requerido (*) */
+  .InputField-requerido {
+    color: red;
+    font-size: 1.2rem;
+    margin-left: 0.313rem;
+  }
+  
+  /* Estilo para el mensaje de error */
+  .InputField-error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.313rem;
+  }
+  
+

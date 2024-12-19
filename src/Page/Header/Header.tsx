@@ -1,6 +1,6 @@
 import Logo from '../../assets/Logo-2.svg'
 import './Header.css'
-import {NavLink, useLocation  } from "react-router";
+import {Link, NavLink, useLocation  } from "react-router";
 import { useEffect, useState } from 'react';
 
 
@@ -74,7 +74,9 @@ export const Header = () => {
     <header className='header'>
       <div className='contenedor-header'>
           <nav className='header-logo'>
-            <img src={Logo} alt='Logo' className='header-imagen-logo'/>
+            <Link to={'/'}>
+                <img src={Logo} alt='Logo' className='header-imagen-logo'/>
+            </Link>
           </nav>
 
           <nav className='menu'>

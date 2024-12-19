@@ -1,4 +1,3 @@
-export { Page } from "./Page/Page";
-export { Header } from "./Header/Header";
-export { Footer } from "./Page/Footer/Footer";
-
+export { InputField } from './InputField/InputField';
+export {InputButtonPrimary} from './InputButtonPrimary/InputButtonPrimary'
+export {SelectField} from './SelectField/SelectField'
