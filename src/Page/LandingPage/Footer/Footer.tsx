@@ -22,7 +22,7 @@ const navegacion = [
   {
     id: 4, 
     name: 'Reservación',
-    url:'/reservacion-mesa'
+    url:'/Reservacion-Mesa'
   }
 ]
 

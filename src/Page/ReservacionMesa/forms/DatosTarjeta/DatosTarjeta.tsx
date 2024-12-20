@@ -4,8 +4,9 @@ import { zodFormValuesInfoTarjeta, zodSchemaInfoTarjeta } from '../../zod/zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link, useNavigate } from 'react-router';
 import { useRegisterFormContext } from '../../hook/useRegisterFormContext';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './DatosTarjeta.css'
+import { useValidacionNavegationCard } from '../../hook/useValidacionNavegationCard';
 
 
 const campos1: { label: string, id: keyof zodFormValuesInfoTarjeta, type: string }[] =  [
@@ -39,10 +40,29 @@ const campos2: { label: string, id: keyof zodFormValuesInfoTarjeta, type: string
 
 export const DatosTarjeta = () => {
 
-    const{dispatch} = useRegisterFormContext()          //Inicializando el useContext
-    const navigate = useNavigate();
-  
+    const{dispatch} = useRegisterFormContext()                 //Inicializando el useContext, para poder manipular el estado global
+    const navigate = useNavigate();                            //Hook para navegar entre paginas
+    const validacion = useValidacionNavegationCard();          //Hook personalizado para validar si puede navegar en esta pagina, si no ha completado los datos de los formularios anteriores no va a poder navegar hasta aqui 
+    const [initialized, setInitialized] = useState(false);     // Control de inicialización
     
+   
+
+    //--------------------Validacion de navegacion---------------------- 
+
+    
+    //Si no ha llevanado los datos de los formularios anteriores, no va a poder navegar aqui
+    useEffect(()=>{
+      if(initialized && !validacion){
+        navigate('/Reservacion-Mesa')
+      }
+    },[initialized, validacion, navigate])
+
+    useEffect(() => { 
+      setInitialized(true);       // Marcamos la inicialización como completa después del primer render
+    }, []);
+
+    //--------------------------------------------------------------------------
+
 
       //Configura el estado de porcentaje en 0 del useContext
       useEffect(() => {

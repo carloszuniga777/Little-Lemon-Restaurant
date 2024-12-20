@@ -1,5 +1,7 @@
+import { IoIosInformationCircle } from "react-icons/io"
 import { useRegisterFormContext } from "../../hook/useRegisterFormContext"
 import './ProfileCard.css'
+import { FaCheckCircle } from "react-icons/fa"
 
 export const ProfileCard = () => {
   const{state} = useRegisterFormContext()
@@ -15,7 +17,16 @@ export const ProfileCard = () => {
                 <>
                     <h3 className="text-makarzi">Perfil de usuario</h3>
                     <hr/>
-                    <h4>Información Personal</h4>
+                    <h4>{   state.user.nombre 
+                         && state.user.apellido 
+                         && state.user.email 
+                         && state.user.telefono 
+                         ? <FaCheckCircle style={{color:'green', fontSize:'1rem', marginRight: '0.5rem'}}/> 
+                         : <IoIosInformationCircle  style={{color:'orange', fontSize:'1.1rem', marginRight: '0.5rem'}}/>}
+                         
+                         Información Personal
+                    </h4>
+
                       {
                         state.user.nombre !=='' && 
                         (
@@ -26,11 +37,19 @@ export const ProfileCard = () => {
                           </> 
                         ) 
                       } 
-                      <h4>Mesa</h4>
+                      <h4>{  state.mesa.ocasion 
+                          && state.mesa.fecha 
+                          && state.mesa.hora 
+                          && state.mesa.invitados 
+                          ? <FaCheckCircle style={{color:'green', fontSize:'1rem', marginRight: '0.5rem'}}/> 
+                          : <IoIosInformationCircle style={{color:'orange', fontSize:'1.1rem', marginRight: '0.5rem'}}/> 
+                          } 
+                          Reserva de Mesa
+                      </h4>
                       {state.mesa.hora !== '' &&
                           <>
                               <p><span>Ocasion:</span> {state.mesa.ocasion}</p>
-                              <p><span>Fecha:</span> {state.mesa.fecha.toLocaleDateString()} {state.mesa.hora}</p>
+                              <p><span>Fecha:</span> {state.mesa.fecha ? state.mesa.fecha.toLocaleDateString() : ''} {state.mesa.hora}</p>
                               <p><span>Numero de Invitados:</span> {state.mesa.invitados}</p>
                           </>
                       } 
@@ -43,7 +62,7 @@ export const ProfileCard = () => {
             state.resumenPago && 
             (
               <>
-                <h3 className="text-makarzi">Detalle de pago</h3>
+                <h3 className="text-makarzi"><IoIosInformationCircle  style={{color:'orange', fontSize:'1.1rem', marginRight: '0.5rem'}}/> Detalle de pago</h3>
                 <hr/>
                 <p><span>Cargo de reservación: </span>USD 30</p>
                 <p><span>Numero de invitados: </span>{state.mesa.invitados || 0}</p>
@@ -54,7 +73,7 @@ export const ProfileCard = () => {
                 <hr/>
                 <h3 className="text-makarzi">Perfil de usuario</h3>
                     <hr/>
-                    <h4>Información Personal</h4>
+                    <h4><FaCheckCircle style={{color:'green', fontSize:'1rem', marginRight: '0.5rem'}}/> Información Personal</h4>
                       {
                         state.user.nombre !=='' && 
                         (
@@ -65,11 +84,11 @@ export const ProfileCard = () => {
                           </> 
                         ) 
                       } 
-                      <h4>Mesa</h4>
+                      <h4><FaCheckCircle style={{color:'green', fontSize:'1rem', marginRight: '0.5rem'}}/> Reserva de Mesa</h4>
                       {state.mesa.hora !== '' &&
                           <>
                               <p><span>Ocasion:</span> {state.mesa.ocasion}</p>
-                              <p><span>Fecha:</span> {state.mesa.fecha.toLocaleDateString()} {state.mesa.hora}</p>
+                              <p><span>Fecha:</span> {state.mesa.fecha ? state.mesa.fecha.toLocaleDateString() : ''} {state.mesa.hora}</p>
                               <p><span>Numero de Invitados:</span> {state.mesa.invitados}</p>
                           </>
                       }   

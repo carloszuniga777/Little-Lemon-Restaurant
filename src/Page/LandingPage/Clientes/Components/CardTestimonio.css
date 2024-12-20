@@ -8,11 +8,25 @@
     -moz-border-radius: 0.6rem;
     -ms-border-radius: 0.6rem;
     -o-border-radius: 0.6rem;
-    
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),                    
                 0px 1px 1px 0px rgba(0, 0, 0, 0.14),                    
                 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+    animation: aparecerCarTestimonio linear forwards;               /*Asocia la animacion con el keyframe*/
+    animation-timeline: view(block  95% auto);                      /*Realiza la animacion segun la posicion del viewport en vertical e inicia la animacion en 93% y finaliza automaticamente*/
+    will-change: transform, translateX, rotate;                    /*Optimiza las propiedades que se van animar*/
+            
 }
+
+@keyframes aparecerCarTestimonio{
+    from{
+       transform: translateX(-800px) rotate(-540deg);    
+    }
+    to{
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
 
 .contenedor-testimonio-img-cita{
     display: flex;

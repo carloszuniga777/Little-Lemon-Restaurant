@@ -16,7 +16,7 @@ export const Presentacion = () => {
                 </p>
                 </div>
                 
-                <Link to={'/reservacion-mesa'}>
+                <Link to={'/Reservacion-Mesa'}>
                     <button className="boton-reservar-mesa text-karla">
                         Reservar Mesa
                     </button>

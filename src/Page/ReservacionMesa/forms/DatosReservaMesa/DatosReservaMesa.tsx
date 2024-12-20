@@ -5,9 +5,10 @@ import { useForm, Path } from 'react-hook-form';
 import { DatePickerField } from '../../../../components/DataPickerField/DataPickerField';
 import './DatosReservaMesa.css'
 import { InputButtonPrimary } from '../../../../components';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useRegisterFormContext } from '../../hook/useRegisterFormContext';
+import { useValidacionNavegationMesa } from '../../hook/useValidacionNavegationMesa';
 
 const dataSelectOcacion: {
     label: string;
@@ -67,11 +68,33 @@ const dataSelectInvitados: {
 }
 
 
+
+
+
+
 export const DatosReservaMesa = () => {
 
     
-    const{state, dispatch} = useRegisterFormContext()          //Inicializando el useContext
-    const navigate = useNavigate();
+    const{state, dispatch} = useRegisterFormContext()          //Inicializando el useContext, el cual contiene la informacion del formulario y el estado
+    const navigate = useNavigate();                            //Hook de navegacion
+    const validacion = useValidacionNavegationMesa()          //Hook para validar si el usuario lleno todos los campos del formulario de informacion personal (pagina anterior) y evita que entre a este formulario 
+    const [initialized, setInitialized] = useState(false);   // Control de inicialización
+
+    //--------------------Validacion de navegacion----------------------
+    
+    //Si el usuario no lleno el formulario anterior lo devuelve al inicio
+    useEffect(()=>{
+        if(initialized && !validacion){
+            navigate('/Reservacion-Mesa')
+          }
+    },[validacion, navigate, initialized])
+
+    
+    useEffect(() => {
+        setInitialized(true);       // Marcamos la inicialización como completa después del primer render
+    }, []);
+
+    //------------------------------------------------
 
 
       //Configura el estado de porcentaje en 0 del useContext

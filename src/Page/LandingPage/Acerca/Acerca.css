@@ -34,7 +34,27 @@
 
 .contenedor-acerca-imagen{
     position: relative;
+    animation: acerca-imagen-rotar linear;                                              /*Asocia el keyframe con la animacion*/
+    -webkit-animation: acerca-imagen-rotar linear;                                                   
+    animation-timeline: view(block 95% auto);                                           /*Realiza la animacion cuando hace scroll y el viewport se encuentra en el elemento*/        
+    will-change: transform, opacity;                                                    /*Optimiza la animacion*/ 
+    filter: drop-shadow(-6px 6px 20px rgba(0, 0, 0, 0.25)); 
 }
+
+
+@keyframes acerca-imagen-rotar{
+    0% {
+      -webkit-transform: rotateY(-360deg);
+              transform: rotateY(-360deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+      opacity: 1;
+    }
+  }
+
 
 .image{
     width: 100%;

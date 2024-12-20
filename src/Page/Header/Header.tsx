@@ -2,19 +2,20 @@ import Logo from '../../assets/Logo-2.svg'
 import './Header.css'
 import {Link, NavLink, useLocation  } from "react-router";
 import { useEffect, useState } from 'react';
+import { IoMdMenu } from 'react-icons/io';
 
-
+//Elementos que se van a visualizar en el header segun la ruta en la que se encuentre el usuario
 const menus = {
   public: [
     { id: 1, name: 'Inicio', url: '#presentacion' },
     { id: 2, name: 'Acerca', url: '#acerca' },
     { id: 3, name: 'Especialidades', url: '#especiales' },
     { id: 4, name: 'Testimonio', url: '#clientes' },
-    { id: 5, name: 'Reservación', url: '/reservacion-mesa' },
+    { id: 5, name: 'Reservación', url: '/Reservacion-Mesa' },
   ],
   private: [
     { id: 1, name: 'Inicio', url: '/' },
-    { id: 2, name: 'Reservación', url: '/reservacion-mesa' },
+    { id: 2, name: 'Reservación', url: '/Reservacion-Mesa' },
   ],
   error: [
     { id: 1, name: 'Inicio', url: '/' },
@@ -27,6 +28,7 @@ const menus = {
 export const Header = () => {
 
   const [menu, setMenu] = useState(menus.public);
+  const [menuActive, setMenuActive] = useState(false);
   const location = useLocation();
 
 
@@ -35,9 +37,9 @@ export const Header = () => {
 
     // Función para determinar el menú según la ruta actual
     const determineMenu = (path:string) => {
-      
-      if (path === '/reservacion-mesa') {                                                   //Si la ruta del navegador(path) es la de Revacion: El header solo renderizara las rutas Private(Inicio, reservacion)
-        return menus.private;
+                                                
+      if (path.match(/^\/Reservacion-Mesa(\/.*)?$/)){                                     //Si la ruta del navegador(path) es la de Revacion: El header solo renderizara las rutas Private(Inicio, reservacion)
+       return menus.private;
       }
 
       if (menus.public.some(item => item.url.startsWith('#') && path === '/')) {           //Si la ruta del navegador(path) es la de inicio '/'. El header se renderizara con las rutas Public(Inicio, Acerca, Especilidades, Testimonio, Reservacion)    
@@ -47,12 +49,21 @@ export const Header = () => {
       return menus.error;                                                                  //Si la ruta no existe o no esta mapeada. El header se renderizara solo el inicio                                              
     };
 
+  //------------------------------------------------------------
+
 
   // Actualiza el menú cada vez que cambia la ruta
   useEffect(() => {
     setMenu(determineMenu(location.pathname));
   }, [location.pathname]);
 
+
+   //----------------------------------------
+   //Desplega el menu en dispositivos moviles cuando se hace click en el boton de menu
+
+   const toggleMenu = () => {
+    setMenuActive( !menuActive )
+   }
 
 
 
@@ -79,8 +90,12 @@ export const Header = () => {
             </Link>
           </nav>
 
+          <button className='boton-menu-header'  onClick={ toggleMenu }>
+            <IoMdMenu className='boton-menu-icon'/>  
+          </button>
+
           <nav className='menu'>
-              <ul className='menu-navegacion'>
+              <ul className={`menu-navegacion ${ menuActive ? 'menu-navegacion-activo' : '' }`}>
                   {
                     menu.map(item => (
                               <li className='text-makarzi navheader' key={item.id}>

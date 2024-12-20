@@ -40,7 +40,7 @@ export const Especialidades = () => {
          <aside className="especiales" id="especiales">
                 <div className="contenedor-titulo-button">
                     <h2 className="text-makarzi">Especialidades de está semana</h2>
-                    <Link to={'/menu'}><button className="boton-menu text-karla">Menu</button></Link>
+                    <Link to={'/'}><button className="boton-menu text-karla">Menu</button></Link>
                 </div>
 
                 <section className="contenedor-especialidades text-karla">
