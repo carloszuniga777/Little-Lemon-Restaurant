@@ -1,0 +1,274 @@
+.presentacion{  
+    background-color: #495e57;
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 84% 87%, 67% 100%, 54% 86%, 38% 100%, 20% 88%, 0 100%, 0 0);
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 100%, 84% 87%, 67% 100%, 54% 86%, 38% 100%, 20% 88%, 0 100%, 0 0);
+    overflow: hidden;
+}
+
+.contenedor-presentacion{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    height: 60dvh;
+    max-height: 37.5rem;
+    max-width: 120rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+
+.contenedor-descripcion-button{
+    width: 60%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+  
+
+
+.titulo{
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    color: #F4CE14;
+    text-transform: uppercase;
+}
+
+.subtitulo-1{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    text-align: center;
+    color: white;
+    line-height: 1.7;
+}
+
+.subtitulo-2{
+    margin-top: 0;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.titulo,
+.subtitulo-1,
+.subtitulo-2{
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+.contenedor-imagen{
+    position: relative;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: roll-in-blurred-right 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: roll-in-blurred-right 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    will-change: transform, filter, opacity;       /*Optimizacion de las animaciones*/                                            
+}
+
+@-webkit-keyframes roll-in-blurred-right {
+    0% {
+      -webkit-transform: translateX(1000px) rotate(720deg);
+              transform: translateX(1000px) rotate(720deg);
+      -webkit-filter: blur(50px);
+              filter: blur(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0) rotate(0deg);
+              transform: translateX(0) rotate(0deg);
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes roll-in-blurred-right {
+    0% {
+      -webkit-transform: translateX(1000px) rotate(720deg);
+              transform: translateX(1000px) rotate(720deg);
+      -webkit-filter: blur(50px);
+              filter: blur(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0) rotate(0deg);
+              transform: translateX(0) rotate(0deg);
+      -webkit-filter: blur(0);
+              filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+
+
+
+.boton-reservar-mesa{
+    width: 10rem;
+    background-color: #F4CE14;
+}
+
+.boton-reservar-mesa:hover{
+    -webkit-animation: shake-horizontal 0.9s cubic-bezier(0.645, 0.045, 0.355, 1.000) both;
+    animation: shake-horizontal 0.9s cubic-bezier(0.645, 0.045, 0.355, 1.000) both;
+}
+@-webkit-keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-2px);
+              transform: translateX(-2px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(2px);
+              transform: translateX(2px);
+    }
+    80% {
+      -webkit-transform: translateX(2px);
+              transform: translateX(2px);
+    }
+    90% {
+      -webkit-transform: translateX(-2px);
+              transform: translateX(-2px);
+    }
+  }
+
+
+  @keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-2px);
+              transform: translateX(-2px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(2px);
+              transform: translateX(2px);
+    }
+    80% {
+      -webkit-transform: translateX(2px);
+              transform: translateX(2px);
+    }
+    90% {
+      -webkit-transform: translateX(-2px);
+              transform: translateX(-2px);
+    }
+  }
+
+
+.imagen-mesero{
+    border-radius: 3rem;
+
+    width: 14rem;
+    height: 15rem;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}
+
+
+
+@media screen and (max-width: 640px){
+
+ 
+    .presentacion{
+        clip-path:  polygon(100% 0, 100% 100%, 87% 94%, 71% 100%, 53% 94%, 36% 100%, 20% 94%, 0 100%, 0% 31%, 0 0);
+        -webkit-clip-path: polygon(100% 0, 100% 100%, 87% 94%, 71% 100%, 53% 94%, 36% 100%, 20% 94%, 0 100%, 0% 31%, 0 0);
+    }
+    .contenedor-presentacion{
+        flex-flow: column nowrap;
+        place-items: center;
+        place-content: center;
+        height: 85dvh;
+        gap: 2rem;
+    }
+
+    .contenedor-descripcion{
+        padding-top: 1rem;
+     }
+
+    .contenedor-descripcion-button {
+        width: 100%;
+    }   
+
+    .contenedor-imagen {
+        width: 100%;
+    }
+
+        
+    .boton-reservar-mesa{
+        width: 7rem;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.1rem;
+    }
+
+}
+
+@media screen and (max-width:640px) {
+    
+    .imagen-mesero{
+        width: 9rem;
+        height: 10rem;
+    }
+}
+
+
+@media screen and (min-width: 1280px){
+    .imagen-mesero{
+         width: 18rem;
+        height: 20rem; 
+    }
+}

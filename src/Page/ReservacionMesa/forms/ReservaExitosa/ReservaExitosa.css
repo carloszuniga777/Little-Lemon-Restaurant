@@ -1,0 +1,42 @@
+.contenedor-reservamesaexitosa{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    background: #495e57;
+    margin: 0px auto;
+    max-width: 40rem;
+    width: 100%;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.titulo-ReservaExitosa{
+    font-size: clamp(1.3rem, 3dvw, 2.5rem);
+    color: white;
+    text-transform: capitalize;
+}
+
+.icon-check-reservaExitosa{
+    color: #F4CE14;
+    font-size: 12rem 
+}
+
+.contenedor-reservaexistosa-descripcion{
+    color: white;
+}
+
+.contenedor-reservaexistosa-descripcion span{
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px) {
+    .contenedor-reservamesaexitosa {
+        width: 90%;
+    }   
+}

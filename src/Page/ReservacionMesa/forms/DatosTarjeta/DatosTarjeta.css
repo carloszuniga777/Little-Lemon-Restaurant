@@ -1,0 +1,28 @@
+.contenedor-DatosTarjeta{
+    width: 100%;
+    max-width: 24rem;
+}
+
+.contenedor-cvv-expiraciondate{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+input#expirationDate{
+    width: 8rem;
+}
+
+input#cvv{
+    width: 8rem;
+}
+
+.botonComprarReserva{
+    background-color: red;
+}
+
+@media screen and (max-width: 640px) {
+    .contenedor-DatosTarjeta{
+        padding-left: 1rem;
+    }
+}

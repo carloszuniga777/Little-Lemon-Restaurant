@@ -1,0 +1,130 @@
+.header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  margin-top: 0.8rem;
+  max-width: 120rem;
+  animation: menu-animado linear both;
+  -webkit-animation: menu-animado linear both;
+  animation-timeline: scroll(root block);
+  z-index: 1000;
+}
+
+@keyframes menu-animado {
+  0%{
+       background-color: rgb(255 255 255);
+    }
+  100%{
+        backdrop-filter: blur(37px);
+     }
+} 
+
+@-webkit-keyframes menu-animado{
+    0%{
+        background-color: rgb(255 255 255);
+     }
+   100%{
+        backdrop-filter: blur(37px);
+      }
+}
+
+
+
+.contenedor-header{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*Boton de navegacion movil*/
+.boton-menu-header{
+    display: none;     
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    padding: 0.5rem;
+}
+
+.boton-menu-icon{
+    width: 1rem;
+    width: 1rem;
+}
+
+
+.header-imagen-logo{
+    width: 12rem;
+}
+
+
+.menu-navegacion{
+ display: flex;
+ flex-flow: row nowrap;
+ list-style: none;
+ gap: 2rem;
+ margin-top: 0.5rem;
+}
+
+.menu-navegacion  a:hover{
+    color: orange;
+}
+
+.menu-navegacion li{
+ font-weight: 600;
+ font-size: 1.2rem;
+ cursor: pointer;
+}
+
+
+                        
+.navheader > a{
+    color: black;
+}
+
+
+@media screen and (max-width: 640px){
+    .header-imagen-logo {
+         width: 10rem;
+    }     
+
+    
+    /*Configuracion de menu navegacion movil*/
+
+    .contenedor-header{
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    /*Se le asigna todo el espacio al menu de navegacion para que se vuelque abajo y deje el boton a lado izquierdo*/
+    .menu{
+        width: 100%;
+    }
+
+    .menu-navegacion{
+        flex-flow: column nowrap;
+        align-items: center;
+        height:0dvh;
+        opacity: 0;
+        gap: 0.3rem;
+        transition: all .5s ease;
+        overflow: hidden;
+    }
+
+    .menu-navegacion-activo{
+        height: auto;
+        padding-bottom: 1rem;
+        opacity: 1;
+    }
+
+    .boton-menu-header{
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 1280px){
+    .header-imagen-logo {
+        width: 11rem;
+    }
+}

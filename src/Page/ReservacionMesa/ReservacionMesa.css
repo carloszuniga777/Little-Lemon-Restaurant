@@ -1,0 +1,44 @@
+.contenedor-reservacion-mesa{
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 2rem;
+    gap: 2rem;
+    padding-left: 5rem;
+    padding-right: 1rem;
+}
+
+.contenedor-reservacion-mesa-formulario{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+    gap: 2rem;
+}
+
+.contenedor-reservacion-mesa-formulario > * {
+    order: 0; /* Orden por defecto */
+}
+
+
+@media screen and (max-width:640px) {
+    
+    .contenedor-reservacion-mesa {
+        padding-left: 0rem;
+        min-width: 24rem;
+        padding-right: 0;
+    }
+
+    .contenedor-reservacion-mesa-formulario > :nth-child(1) {
+        order: 2; /* `Outlet` pasa a estar debajo */
+        padding-right: 2rem;
+        padding-left: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .contenedor-reservacion-mesa-formulario > :nth-child(2) {
+        order: 1; /* `ProfileCard` pasa a estar arriba */
+    }
+    
+}
+
+

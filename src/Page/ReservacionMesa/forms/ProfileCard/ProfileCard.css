@@ -1,0 +1,44 @@
+.profile-card {
+  background-color: #f9f9f9;  /* Fondo suave */
+  border: 1px solid #ddd;      /* Borde sutil */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);     /* Sombra para mayor profundidad */
+  width: 22rem;
+  margin: 0 auto;                                /* Centrar la tarjeta */
+  font-family: Arial, sans-serif;
+}
+
+.profile-card h3 {
+  margin-bottom: 0.5rem;
+  color: #495e57;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.profile-card hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1rem 0;
+}
+
+.profile-card h4 {
+  margin-top: 1rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.profile-card p {
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 0.85rem;
+  display: flex;      /* Distribución horizontal */
+  justify-content: space-between; /* Alinear elementos en los extremos */
+  align-items: center; /* Alinear verticalmente */
+}
+
+.profile-card p span {
+  font-weight: bold; /* Resaltar el título */
+  color: #333;       /* Color más oscuro para el título */
+}
+

@@ -1,0 +1,89 @@
+/*amarillo: #F4CE14*/
+
+.footer{
+   background-color: #495e57; 
+}
+
+.contenedor-footer{
+    padding-top: 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 120rem;
+}
+
+.contenedor-footer-info{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: start;
+    gap: 2rem;
+    width: 100%;
+    padding-bottom: 3rem;
+}
+
+.subcontenedor-footer{
+    color: white;
+}
+
+.contenedor-footer-logo{
+    width: 10%;
+}
+
+.contenedor-footer-navegacion{
+    width: 20%;
+}
+
+.contenedor-footer-navegacion ul{
+    padding-top: 1rem;
+}
+
+.contenedor-footer-navegacion li{
+    list-style: none;
+    line-height: 1.7;
+    font-size: clamp(0.6rem, 3vw, 0.9rem);
+}
+
+.titulo-footer{
+    color: #F4CE14;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+
+.imagen-footer{
+    width: 6.25rem;
+    background-color: white;
+}
+
+.contactenos h4{
+    text-decoration: underline;
+    margin-top: 0.8rem;
+}
+
+.copyright{
+    color: white;
+    font-size: 0.6rem;
+}
+
+.navfooter > a{
+    color: white;
+    font-size: clamp(0.8rem, 4vw, 1.3rem);
+}
+
+@media screen and (max-width:768px) {
+    
+    .contenedor-footer-info{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    
+    .contenedor-especialidades-titulo-precio h4 {
+        width: 66%;
+    }
+
+    .contenedor-footer-navegacion,
+    .contenedor-footer-logo{
+        width: 30%;
+    }
+}
