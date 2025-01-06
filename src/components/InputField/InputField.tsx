@@ -14,13 +14,7 @@ interface InputFieldProps<T extends FieldValues> {
   valueProp?: string
 }
 
-export const InputField = <T extends FieldValues>({ label, id, type, register, errors, required = false, /*valueProp*/}: InputFieldProps<T>) => {
-  
-  // const [value, setValue] = useState(valueProp||'')
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
-  //   setValue(e.target.value)
-  // }
+export const InputField = <T extends FieldValues>({ label, id, type, register, errors, required = false}: InputFieldProps<T>) => {
   
   return (
     <div className="InputField-campo">

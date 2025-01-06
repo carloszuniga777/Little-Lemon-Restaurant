@@ -61,7 +61,7 @@ export const SelectField = <T extends FieldValues>({
 
     return (
         <FormControl fullWidth sx={{ m: 1 }} variant="standard">
-            <InputLabel variant="standard" htmlFor="uncontrolled-native" shrink={true}>
+            <InputLabel variant="standard" htmlFor={name} shrink={true}>
                 <span style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>
                     {label}
                     {required && <abbr aria-label="required" style={{ color: "red", fontSize: '1rem', marginLeft:'0.4rem'}}>*</abbr>}
@@ -76,7 +76,7 @@ export const SelectField = <T extends FieldValues>({
                         {...field} // Aquí pasamos el controlador de React Hook Form  | field: { onChange, onBlur, value, name, ref } https://www.react-hook-form.com/api/usecontroller/controller/
                         inputProps={{
                             name: label,
-                            id: 'uncontrolled-native',
+                            id: name,
                         }}
                         input={<BootstrapInput />}
                     >
