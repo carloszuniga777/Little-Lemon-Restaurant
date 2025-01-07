@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SelectField } from '../../../../components/SelectField/SelectField';
 import { zodFormValuesReservaMesa, zodSchemaReservaMesa } from '../../zod/zod';
-import { useForm, Path } from 'react-hook-form';
+import { useForm, Path, useWatch } from 'react-hook-form';
 import { DatePickerField } from '../../../../components/DataPickerField/DataPickerField';
 import './DatosReservaMesa.css'
 import { InputButtonPrimary } from '../../../../components';
@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useRegisterFormContext } from '../../hook/useRegisterFormContext';
 import { useValidacionNavegationMesa } from '../../hook/useValidacionNavegationMesa';
+import { fetchAPI } from '../../../../utils/mockAPI';
 
 const dataSelectOcacion: {
     label: string;
@@ -21,30 +22,6 @@ const dataSelectOcacion: {
                 { display: 'Seleccionar opción', value: '' }, // Opción placeholder
                 {display: 'Cumpleaños', value: 'Cumpleaños'},
                 {display: 'Aniversario', value: 'Aniversario'}
-               ]
-}
-
-
-const dataSelectHora: {
-    label: string;
-    name: Path<zodFormValuesReservaMesa>;
-    dataOption: { display: string; value: string | number }[];
-} = {
-    label: 'Hora',
-    name: 'hora',
-    dataOption:[
-                { display: 'Seleccionar opción', value: '' }, // Opción placeholder
-                { display: '10:00', value: '10:00' },
-                { display: '11:00', value: '11:00' },
-                { display: '12:00', value: '12:00' },
-                { display: '13:00', value: '13:00' },
-                { display: '14:00', value: '14:00' },
-                { display: '15:00', value: '15:00' },
-                { display: '16:00', value: '16:00' },
-                { display: '17:00', value: '17:00' },
-                { display: '18:00', value: '18:00' },
-                { display: '19:00', value: '19:00' },
-                { display: '20:00', value: '20:00' }
                ]
 }
 
@@ -79,6 +56,8 @@ export const DatosReservaMesa = () => {
     const navigate = useNavigate();                            //Hook de navegacion
     const validacion = useValidacionNavegationMesa()          //Hook para validar si el usuario lleno todos los campos del formulario de informacion personal (pagina anterior) y evita que entre a este formulario 
     const [initialized, setInitialized] = useState(false);   // Control de inicialización
+    const [horasDisponibles, setHorasDisponibles] = useState([{ display: 'Seleccionar opción', value: '' }]);  //Se utiliza useState para almacenar las horas dinámicas devueltas por fetchAPI.
+
 
     //--------------------Validacion de navegacion----------------------
     
@@ -116,6 +95,29 @@ export const DatosReservaMesa = () => {
             invitados: state.mesa.invitados            
           }
       });
+
+
+            
+      //---------Configurando las horas disponibles del selector hora en base a la fecha seleccionada----------------
+        
+
+      //Uso de useWatch para la fecha
+      //React Hook Form permite observar cambios en un campo específico usando useWatch. Esto permite actualizar las horas disponibles cada vez que cambia la fecha seleccionada.
+        const fechaSeleccionada = useWatch({ control, name: 'fecha' });  
+
+        
+        useEffect(() => {
+            //Si la fecha seleccionada cambia, busca las horas disponibles y realiza la transformacion para guardar en el estado, este estado actualiza el selector de horas.  
+            if (fechaSeleccionada) {
+                const nuevasHoras = fetchAPI(new Date(fechaSeleccionada)).map(hora => ({
+                    display: hora,
+                    value: hora
+                }));
+                setHorasDisponibles([{ display: 'Seleccionar opción', value: '' }, ...nuevasHoras]);
+            }
+        }, [fechaSeleccionada]);
+
+      //----------------------------------------------------------------------------------------
 
 
        //Submit
@@ -165,16 +167,16 @@ export const DatosReservaMesa = () => {
                                             errors={errors}
                                             required={true} 
                                     />     
- 
-                                    <SelectField 
-                                        label={dataSelectHora.label}   
-                                        dataOption={dataSelectHora.dataOption}
-                                        name={dataSelectHora.name}
+    
+                             
+                                    <SelectField
+                                        label="Hora"
+                                        dataOption={horasDisponibles}
+                                        name="hora"
                                         control={control}
                                         errors={errors}
-                                        required={true}   
-                                    />  
-                                   
+                                        required={true}
+                                    />
                                 
                                 </div>   
 
