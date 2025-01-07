@@ -159,22 +159,48 @@
                     
 -->
 
+
 # Little Limon Restaurant
+Bienvenido al repositorio del sitio web de Little Lemon Restaurant. Este proyecto se creó como parte del curso Meta Frontend Developer. Está construido con React y ofrece una interfaz elegante para los usuarios que desean explorar el menú del restaurante y hacer reservas.
 
-## Installation
 
-Intalar los modulos de node
+![Website Preview](./public/LittleLemonRestaurantPage.png)
+
+
+## Vista previa en producción
+
+¡Echa un vistazo a la versión en vivo del sitio web!  [Ver demostración en vivo](https://little-lemon-restaurant-kappa.vercel.app/).
+
+
+## Features
+
+- Navegación fluida a través de las páginas.
+- Explora el menú del restaurante con estilo.
+- Haga una reserva utilizando un formulario interactivo.
+- Construido con React para una experiencia de usuario moderna e interactiva.
+## Instalación 
+
+1. Primero clonar el proyecto
+
+2. Intalar los modulos de node
 
 ```bash
-  
   cd little-lemon-restaurant
-  npm i
 ```
-    
+
+```bash
+  npm i  
+```
 ## Ejecutar localmente
 
-Clone the project
-
+Ejecutar el proyecto localmente:
 ```bash
 npm run dev
 ```
+Ejecutar los test:
+
+```bash
+npm test
+```
+
+Se abrira una ventana automaticamente en el navegador donde se veran todos los test
