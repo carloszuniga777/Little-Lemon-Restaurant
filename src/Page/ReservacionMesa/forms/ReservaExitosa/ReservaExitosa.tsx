@@ -33,7 +33,7 @@ export const ReservaExitosa = () => {
           <FaCheck className='icon-check-reservaExitosa'/>
           <div className="contenedor-reservaexistosa-descripcion text-karla">
               <p>¡Muchas felicidades! Su reserva ha sido realizada de manera exitosamente</p>
-              <p>Se realizo la reserva con el id: <span>{generarIdNumerico(5)}</span> para el dia <span>{formatearFecha(new Date(state.mesa.fecha))} {state.mesa.hora}</span></p>
+              <p>Se realizo la reserva con el id: <span>{generarIdNumerico(5)}</span> para el dia <span>{state.mesa.fecha ? formatearFecha(new Date(state.mesa.fecha)) : 'Fecha no disponible'} {state.mesa.hora}</span></p>
           </div>
          <Link to={'/'}> <button className="text-karla">Ir al inicio</button></Link>
       </div>
