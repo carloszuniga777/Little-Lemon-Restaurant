@@ -178,19 +178,29 @@ Bienvenido al repositorio del sitio web de Little Lemon Restaurant. Este proyect
 - Explora el menú del restaurante con estilo.
 - Haga una reserva utilizando un formulario interactivo.
 - Construido con React para una experiencia de usuario moderna e interactiva.
+
+## Tecnologías Implementadas
+
+Este proyecto está construido utilizando las siguientes tecnologías:
+
+- **Vite**: Herramienta de construcción rápida para aplicaciones web, utilizada para optimizar el proceso de desarrollo y mejorar la experiencia en la construcción del proyecto.
+- **TypeScript**: Superset de JavaScript que agrega tipado estático, mejorando la calidad del código y la experiencia de desarrollo.
+- **React**: Biblioteca de JavaScript para la construcción de interfaces de usuario, utilizada para crear componentes reutilizables y estructurar la aplicación.
+- **Vitest**: Framework de pruebas unitarias y de integración para aplicaciones de JavaScript, diseñado para ser rápido y compatible con Vite.
+- **Testing Library**: Conjunto de herramientas para realizar pruebas de componentes de React, enfocado en pruebas basadas en la interacción del usuario.
+
+
 ## Instalación 
 
-1. Primero clonar el proyecto
-
-2. Intalar los modulos de node
-
-```bash
-  cd little-lemon-restaurant
-```
-
-```bash
-  npm i  
-```
+1. Clona el repositorio:
+   ```bash
+   git clone carloszuniga777/Little-Lemon-Restaurant
+   ```
+2. Instala las dependencias:
+ 
+ ``` 
+    npm install
+ ```
 ## Ejecutar localmente
 
 Ejecutar el proyecto localmente:
@@ -204,3 +214,7 @@ npm test
 ```
 
 Se abrira una ventana automaticamente en el navegador donde se veran todos los test
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, por favor crea un fork del repositorio y envía un pull request.
